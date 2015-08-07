@@ -1,0 +1,19 @@
+{
+  "name": "tweetmonkey.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.13.3",
+    "gulp": "^3.9.0"
+  },
+  "devDependencies": {
+    "connect-livereload": "^0.5.3",
+    "tiny-lr": "^0.1.6"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jeremy Foster <jeremy.foster@live.com> (http://codefoster.com/)",
+  "license": "Apache-2.0"
+}
