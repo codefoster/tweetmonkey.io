@@ -19,7 +19,7 @@ function notifyLivereload(event) {
 }
 
 gulp.task('default',function(){
-	app.listen(3000);
+	app.listen(process.env.port || 3000);
 	startLivereload();
 	gulp.watch('**/*.*', notifyLivereload);
 })
