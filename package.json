@@ -8,6 +8,7 @@
     "gulp": "^3.9.0"
   },
   "devDependencies": {
+    "browser-sync": "^2.8.2",
     "connect-livereload": "^0.5.3",
     "tiny-lr": "^0.1.6"
   },
