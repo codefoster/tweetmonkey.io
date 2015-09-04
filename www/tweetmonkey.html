@@ -33,6 +33,16 @@
     <script src="js/html5shiv.js"></script>
     <![endif]-->
     <script src='js/device.min.js'></script>
+    <style>
+        .conditional button { min-width:74px; }    
+        .steps > li {
+            margin-top:100px;
+        }
+        .navbar-brand:before {
+            left: -24px;
+            top: -30px;
+        }
+    </style>
 </head>
 <body>
 <div class="page">
@@ -40,7 +50,7 @@
                               HEADER
     =========================================================-->
     <header class="header__mod">
-        <div id="stuck_container" class="stuck_container">
+        <div class="stuck_container">
             <nav class="navbar navbar-default navbar-static-top ">
                 <div class="navbar-header">
                     <h1 class="navbar-brand">
@@ -61,36 +71,30 @@
     <main>
 
         <section class="well7">
-            <div class="container wow fadeIn text-center" data-wow-duration="2s" data-wow-delay="0.2s">
+            <div class="container text-center" style="background-color:lightyellow;padding:15px;">
+                <h4>This page is <b>in progress</b>. It's not finished... undone... mid-completion. There are currently gross errors. This <b>is</b> the new home for the Tweet Monkey project and it <b>is</b> being worked on... maybe right now as you read this.</p>
+                <h4>Thanks in advance for your patience.</h4>
+                <p style="font-size:12pt;">Sept 3, 2015</p></h4>
+            </div>
+        </section>
+
+        <section class="well7 wow fadeIn" data-wow-duration="2s" data-wow-delay="0.2s">
+            <div class="container text-center">
                 <h2 class="">choose your board...</h2>
                 <p>The board you decide to start with will affect how much the project is going to cost as well as the overall ease of completing it.</p>
                 <div class="row text-center">
-                    <div class="col-md-2 col-sm-2 col-xs-2"></div>
-                    <div class="col-md-2 col-sm-2 col-xs-2" onclick="processConditionals('edison')">
+                    <div class="col-md-3 col-sm-3 col-xs-3"></div>
+                    <div class="col-md-3 col-sm-3 col-xs-3" onclick="processConditionals('raspi')">
+                        <p><img src="images/raspi.png"/></p>
+                        <h5>Raspberry Pi 2</h5>
+                        <h6>Kit: ~$60</h6>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-3" onclick="processConditionals('edison')">
                         <p><img src="images/edison.png"/></p>
                         <h5>Intel Edison</h5>
-                        <h6>Device: $50</h6>
                         <h6>Kit: ~$130</h6>
                     </div>
-                    <div class="col-md-2 col-sm-2 col-xs-2" onclick="processConditionals('tessel-2')">
-                        <p><img src="images/tessel-2.png"/></p>
-                        <h5>Tessel 2</h5>
-                        <h6>Device: ~$35</h6>
-                        <h6>Kit: ~$50</h6>
-                    </div>
-                    <div class="col-md-2 col-sm-2 col-xs-2" onclick="processConditionals('raspberry-pi-2')">
-                        <p><img src="images/raspberry-pi-2.png"/></p>
-                        <h5>Raspberry Pi 2</h5>
-                        <h6>Device: ~$40</h6>
-                        <h6>Kit: ~$55</h6>
-                    </div>
-                    <div class="col-md-2 col-sm-2 col-xs-2" onclick="processConditionals('photon')">
-                        <p><img src="images/photon.png"/></p>
-                        <h5>Particle Photon</h5>
-                        <h6>Device: ~$19</h6>
-                        <h6>Kit: ~$35</h6>
-                    </div>
-                    <div class="col-md-2 col-sm-2 col-xs-2"></div>
+                    <div class="col-md-3 col-sm-3 col-xs-3"></div>
                 </div>
             </div>
         </section>
@@ -102,7 +106,7 @@
                 <div class="row">
                     <div class="col-md-2 col-sm-0 col-xs-0"></div>
                     <div class="col-md-8 col-sm-12 col-xs-12 wow fadeIn" data-wow-duration="2s" data-wow-delay="0.2s">
-                        <p>The list of materials below will change depending on which board you choose above. Next to each item, you'll find links to purchase online. Some of these components like the resistors and jumper wires are best bought in bulk to keep your cost low. I'm included the cost of reasonably sized kits for such components.</p>
+                        <p>The list of materials below will change depending on which board you choose above. Next to each item, you'll find links to purchase online. You would be better off on many  of these components to buy them in bulk to keep your cost low. For some items, it's difficult to buy a small enough quantity to complete a single project. I think you should go ahead and stock up and use the extras for new maker projects!</p>
                         <table class="col-md-12">
                             <tbody class="conditional">
                                 <tr class="all">
@@ -110,84 +114,120 @@
                                     <td><strong>Price</strong></td>
                                     <td><strong>Link</strong></td>
                                 </tr>
-                                <tr class="all">
-                                    <td>Monkey</td>
-                                    <td>$12</td>
-                                    <td><a href="http://www.amazon.com/dp/B0000V4H4O/ref=sr_ph_1?m=A2NL9UUKFTRQH&amp;ie=UTF8&amp;qid=1438886567&amp;sr=sr-1&amp;keywords=magic+monkey">Amazon</a></td>
-                                </tr>
+                                
+                                <!-- EDISON -->
                                 <tr class="edison">
                                     <td>Intel Edison</td>
                                     <td>$50</td>
-                                    <td><a href="http://www.sparkfun.com/products/13024">Sparkfun</a></td>
+                                    <td><button><a href="http://www.sparkfun.com/products/13024">Sparkfun</a></button></td>
                                 </tr>
                                 <tr class="edison">
-                                    <td>Edison battery module</td>
+                                    <td>Edison battery module<br/><span style="font-size:8pt">Required to power the Edison compute module</span></td>
                                     <td>$25</td>
-                                    <td><a href="http://www.sparkfun.com/products/13037">Sparkfun</a></td>
+                                    <td><button><a href="http://www.sparkfun.com/products/13037">Sparkfun</a></button></td>
                                 </tr>
                                 <tr class="edison">
-                                    <td>Edison GPIO module</td>
+                                    <td>Edison GPIO module<br/><span style="font-size:8pt">Required to access pins on the Edison compute module</span></td>
                                     <td>$15</td>
-                                    <td><a href="http://www.sparkfun.com/products/13038">Sparkfun</a></td>
+                                    <td><button><a href="http://www.sparkfun.com/products/13038">Sparkfun</a></button></td>
+                                </tr>
+                                <tr class="edison">
+                                    <td>20-pin Pin Header Strip<br/><span style="font-size:8pt">The Edison GPIO module doesn't have any pins on it, so they have to be soldered on</span></td>
+                                    <td>$2</td>
+                                    <td><button><a type="amzn" asin="B0079SK5MO">Amazon</a></button></td>
                                 </tr>
 
+                                <!-- RASPBERRY PI 2 -->
+                                <tr class="raspberry-pi-2">
+                                    <td>Raspberry Pi 2</td>
+                                    <td>$42.29</td>
+                                    <td><button><a type="amzn" asin="B00T2U7R7I">Amazon</a></button></td>
+                                </tr>
+                                <tr class="raspberry-pi-2">
+                                    <td>WiFi adapter<br/><span style="font-size:8pt">Raspberry Pi's don't have wifi. You could just use ethernet, but wireless is cool.</span></td>
+                                    <td>$10</td>
+                                    <td><button><a type="amzn" asin="B003MTTJOY">Amazon</a></button></td>
+                                </tr>
+                                <tr class="raspberry-pi-2">
+                                    <td>16GB Class 4 SD Card<br/><span style="font-size:8pt">8GB would work, but 16GB is better and only a couple more dollars</span></td>
+                                    <td>$6</td>
+                                    <td><button><a type="amzn" asin="B00DYQYLQQ">Amazon</a></button></td>
+                                </tr>
+
+                                <!-- TESSEL 2 -->
                                 <tr class="tessel-2">
                                     <td>Tessel 2</td>
                                     <td>$35</td>
                                     <td><a href="http://www.tessel.io">Tessel.io</a></td>
                                 </tr>
 
-                                <tr class="raspberry-pi-2">
-                                    <td>Raspberry Pi 2</td>
-                                    <td>$40</td>
-                                    <td><a href="http://www.sparkfun.com/products/13297">Sparkfun</a></td>
-                                </tr>
-
+                                <!-- PHOTON -->
                                 <tr class="photon">
                                     <td>Photon</td>
                                     <td>$19</td>
                                     <td><a href="http://store.particle.io">Sparkfun</a></td>
                                 </tr>
 
+                                <!-- COMMON -->
                                 <tr class="all">
-                                    <td>MOSFET</td>
+                                    <td>Monkey<br/><span style="font-size:8pt">Keep in mind that this could be most any battery-operated toy you can find</span></td>
+                                    <td>$8-14</td>
+                                    <td><button><a type="amzn" asin="B0000V4H4O">Amazon</a></button></td>
+                                </tr>
+                                <tr class="all">
+                                    <td>Mini Breadboard<br/><span style="font-size:8pt">These come in a quanity of 6. You can easily find other breadboards that work or you may have one laying around.</span></td>
+                                    <td>$7.10</td>
+                                    <td><button><a type="amzn" asin="B009VJ361G">Amazon</a></button></td>
+                                </tr>
+                                
+                                <tr class="all">
+                                    <td>MOSFET<br/><span style="font-size:8pt">You should get a couple of spares. <a href="http://en.wikipedia.org/wiki/MOSFET">MOSFETs</a> are rather <a href="http://en.wikipedia.org/wiki/Electrostatic_discharge">ESD</a> sensitive, so it's not hard to ruin one.</span></td>
                                     <td>88&cent;</td>
-                                    <td><a href="http://www.digikey.com/product-detail/en/STP16NF06/497-2766-5-ND/603791">Digikey</a></td>
+                                    <td><button><a href="http://www.digikey.com/product-detail/en/STP16NF06/497-2766-5-ND/603791">Digikey</a></button></td>
                                 </tr>
                                 <tr class="all">
-                                    <td>1/4W Resistor Kit</td>
-                                    <td>$15</td>
-                                    <td><a href="http://www.digikey.com/product-detail/en/RS225/RS225-ND/7110">Digikey</a></td>
+                                    <td>1/4W 10k Resistor<br/><span style="font-size:8pt">You may rather buy a resistor kit and get a whole variety of resistance values.</span></td>
+                                    <td>0.01&cent;</td>
+                                    <td><button><a href="http://www.digikey.com/product-detail/en/RS225/RS225-ND/7110">Digikey</a></button></td>
                                 </tr>
                                 <tr class="all">
-                                    <td>Drill and 1/6&quot; drill bit</td>
-                                    <td>&nbsp;</td>
-                                    <td>&nbsp;</td>
+                                    <td>1/4W 33k&ohm; Resistor<br/><span style="font-size:8pt">FYI, 33k&ohm; is a bit of an arbitrary value here. You could use pretty much any high value resistor.</span></td>
+                                    <td>0.01&cent;</td>
+                                    <td><button><a href="http://www.digikey.com/product-detail/en/RS225/RS225-ND/7110">Digikey</a></button></td>
                                 </tr>
                                 <tr class="all">
-                                    <td>2&#39; 22-gauge wire</td>
-                                    <td>&nbsp;</td>
-                                    <td>&nbsp;</td>
-                                </tr>
-                                <tr class="all">
-                                    <td>Short M-F jumper wires</td>
+                                    <td>2' 22-gauge wire<br/><span style="font-size:8pt">This wire is the right size for breadboard holes. You may want to <a type="amzn" asin="B00NB3U2BU">[click here]</a> to order 100' instead.</span></td>
                                     <td>$3</td>
-                                    <td><a href="http://www.digikey.com/product-detail/en/MIKROE-512/1471-1231-ND/4495595">Digikey</a></td>
+                                    <td><button><a type="amzn" asin="B00DQDASM8">Amazon</a></button></td>
                                 </tr>
                                 <tr class="all">
-                                    <td>20-pin Pin Header Strips</td>
-                                    <td>$6</td>
-                                    <td><a href="http://www.digikey.com/product-detail/en/M20-9992046/952-1902-ND/3727869">Digikey</a></td>
+                                    <td>Short M-F jumper wires<br/><span style="font-size:8pt"></span></td>
+                                    <td>$3.99</td>
+                                    <td><button><a type="amzn" asin="B00C0Q5QMY">Amazon</a></button></td>
                                 </tr>
                                 <tr class="all">
-                                    <td>Micro-USB cable and power source</td>
-                                    <td>$2</td>
-                                    <td>&nbsp;</td>
+                                    <td>Micro-USB cable and power source<br/><span style="font-size:8pt">I'm guessing you have at least 73 of these cables already</span></td>
+                                    <td>$5.53</td>
+                                    <td><button><a type="amzn" asin="B005LFXBJG">Amazon</a></button></td>
                                 </tr>
                                 <tr class="all">
-                                    <td>2 AA batteries</td>
-                                    <td>60&cent;</td>
-                                    <td>&nbsp;</td>
+                                    <td>2 AA batteries<br/><span style="font-size:8pt">I'm guessing you have these laying around your house. Am I right?</span></td>
+                                    <td>$5</td>
+                                    <td><button><a type="amzn" asin="B008TUV1HY">Amazon</a></button></td>
+                                </tr>
+                                <tr class="all">
+                                    <td><strong>Tools</strong></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr class="all">
+                                    <td>Drill and 1/16&quot; drill bit</td><td></td><td></td>
+                                </tr>
+                                <tr class="all">
+                                    <td>Wire clippers/strippers</td><td></td><td></td>
+                                </tr>
+                                <tr class="all">
+                                    <td>Soldering iron</td><td></td><td></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -201,75 +241,115 @@
         <section class="well8">
             <div class="container">
                 <h2 class="text-center">do this...</h2>
-                <ul class="index-list">
-                    <li>
+                <ul class="steps index-list conditional">
+                    <li class="all">
                         <h5>Modify the Monkey</h5>
-                        <p>This monkey comes out of the box ready to entertain the masses with a simple on/off switch on his underside. That sort of monkey business won't work for us though! We need to be able to control it programmatically.</p>
-                        <p>So the first thing we need to do is inspect our monkey&#39;s downstairs and see how the switch works.</p>
-                        <p>Here&#39;s what I see...</p>
+                        <p>This monkey comes out of the box ready to entertain the masses with a simple on/off switch on his (ahem!) underside. That sort of monkey business isn't enough for us though! We want to control it programmatically. Because... makers!</p>
+                        <p>So the first thing we need to do is inspect our monkey's downstairs and see how the switch works.</p>
+                        <p>Here's what we see...</p>
                         <p><img alt="" src="images/tweetmonkey/switch.png" /></p>
-                        <p>Every project is different. Here&#39;s what I&#39;m looking for.</p>
-                        <p>We&#39;re dealing with a complete circuit here. There are two AA (1.5V) batteries and they&#39;re hooked up in serial, so that means that this monkey runs on 3V and some unknown amount of current will be drawn.</p>
-                        <p>You don&#39;t often know how much current any given <em>load</em> is going to require. You could put meters in the circuit and measure, but the better thing to do is to simply leave a circuit as is with it&#39;s own power source and everything. The other option would be to attempt to merge the circuits of our load (the monkey) and our microprocessor, but that&#39;s where you have to be careful. Microprocessors tend to cost real dollars. Ironically, the Edison I&#39;m going to introduce soon -&nbsp;an amazing work of engineering art - is only 3x the price of this silly mechanical monkey! The inner workings of computers are child&#39;s play compared to the inner workings of our global economy. But I digress. My point was that you don&#39;t want to toast your Edison. So we want to control the monkey by simply doing the equivalent of turning the switch on an off.</p>
-                        <p>What we discover in this monkey&#39;s butt is that the switch on the outside of the trapdoor is simply connecting or disconnecting the ends of the batteries and completing or breaking the circuit. So let&#39;s do the same. Let&#39;s simply tap into the two contacts with some wires, run them out, and use software to virtually touch the ends of the wire together.</p>
-                        <p>We need to run wires outside all clean like, so let&#39;s drill some very small holes through the trap door and run wires through. Then we&#39;ll set up a soldering station and solder the wires directly to the contacts.</p>
+                        <p>If you've chosen to control something other than this monkey, what you're looking for is any means of tapping into the primary circuit. You want to be able to complete the circuit with logic... programmatically. If your device doesn't do its thing simply by being switched on (like it has a "go" button of some kind) then that's going to be different, and is outside the scope of this project tutorial. It's not impossible or even often all that difficult though, so take heart.</p>
+                        <p>We're dealing with a complete circuit here. There are two AA (1.5V) batteries and they're hooked up in serial, so that means that this monkey runs on 3V and some unknown amount of current will be drawn when the circuit is complete. I've taken this toy apart and happen to know that at its heart it's a simple DC motor that's attached mechanically to all of the squawking, clanging, and nodding.</p>
+                        <p>You don't often know how much current any given <em>load</em> is going to require. You could put meters in the circuit and measure, but the better thing to do is to simply leave a circuit as is with it's own power source and everything.</p>
+                        <p>The thing you have to be careful about is attempting to "drive" your circuit with the current from your microprocessor, because microprocessors tend to cost real money and also tend to not be capable of providing a ton of current before they go bye bye.</p>
+                        <p>Ironically, though, the boards we're dealing with - these amazing works of engineering - are only 2-3 times the price of this silly mechanical monkey! The inner workings of computers are child's play compared to the inner workings of our global economy. But I digress. My point was that you don't want to toast your board.</p>
+                        <p>So we want to control the monkey by simply doing the equivalent of turning the switch on an off.</p>
+                        <p>What we discover in this monkey's underside is that the switch on the outside of the trapdoor is simply connecting or disconnecting the ends of the batteries and completing or breaking the circuit. So let's do the same. Let's simply tap into the two contacts with some wires, run them out, and use software to virtually touch the ends of the wire together.</p>
+                        <p>We need to run wires outside all clean like, so let's drill some very small holes through the trap door and run wires through. Then we'll set up a soldering station and solder the wires directly to the contacts.</p>
                         <p><img alt="" src="images/tweetmonkey/holes.png" /></p>
-                        <p>Now we can close the door and we&#39;ve got two wires that when touched together complete the circuit and set the monkey in motion. Conveniently, we have not disabled our on/off switch, so if we wish to use it to turn the monkey on, we can still do that.</p>
-                        <p>And just like that, we&#39;re done with surgery. Your monkey should recover nicely.</p>
+                        <p>Now we can close the door and we've got two wires that when touched together complete the circuit and set the monkey in motion. Conveniently, we have not disabled our on/off switch, so if we wish to use it to turn the monkey on, we can still do that.</p>
+                        <p>And just like that, we're done with surgery. Your monkey should recover nicely.</p>
                     </li>
 
-                    <li>
+                    <li class="all">
                         <h5>Complete the Circuit</h5>
-                        <p style='font-style:italic;'>[this section will change depending on the type of board selected]</p>
+                        <a href="images/tweetmonkey/breadboard-diagram.png"><img alt="Breadboard Diagram" src="images/tweetmonkey/breadboard-diagram-700.png" /></a>
+                        <p>...</p>
                     </li>
 
-                    <li>
+                    <li class="edison">
+                        <h5>Wire Up the Board</h5>
+                        <p>edison specific insructions</p>
+                    </li>
+
+                    <li class="tessel-2">
+                        <h5>Wire Up the Board</h5>
+                        <p>tessel 2 specific insructions</p>
+                    </li>
+
+                    <li class="raspberry-pi-2">
+                        <h5>Wire Up the Board</h5>
+                        <p>raspberry pi 2 specific insructions</p>
+                    </li>
+
+                    <li class="photon">
+                        <h5>Wire Up the Board</h5>
+                        <p>photon specific insructions</p>
+                    </li>
+
+                    <li class="all">
                         <h5>Sign up for Twitter Access Keys</h5>
-                        <p style='font-style:italic;'>[this section will stay the same regardless of the type of board selected]</p>
+                        <p>Before you can call in to Twitter to request that they notify you about a tweet, you have to have a Twitter account, you have to register your app (this project), and you have to get some keys so that you're using the API as <i>you</i>.</p>
+                        <p>It's not difficult and it doesn't take long.</p>
+                        <p>First, you sign in to Twitter. If you don't have an account already, you need to create one. For the sake of brevity, I'll assume you've got that part.</p>
+                        <p>Next, go to apps.twitter.com and click Create New App.</p>
+                        <p>Give your app a unique name. It has to be globally unique and the obvious ones may already be taken, so you might want to prefix it with your initials or something.</p>
+                        <p>You may not have a website, so you can just make something up for that slot. Make sure it looks like a URL. You can leave the Callback URL blank.</p>
+                        <p>Now click the link that says "manage keys and access tokens". Then scroll down and click "Create my access token".</p>
+                        <p>You should now be able to see your Consumer Key (API Key), your Consumer Secret (API Secret), your Access Token, and Access Token Secret.</p>
+                        <img alt="Consumer Key" src="images/tweetmonkey/consumer-key.png"/>
+                        <img alt="Access Key" src="images/tweetmonkey/access-key.png"/>                        
+                        <p>Copy down those four values because those are what you need to use Twitter from your app.</p> 
                     </li>
 
-                    <li>
-                        <h5>Write the Code</h5>
-                        <p>We&#39;re going to be&nbsp;writing JavaScript in a Node.js project on this Intel Edison to get this monkey grooving. If you are pulling an Edison out of the box and need help setting it up, have a look at <a href="codefoster.com/edison-setup">codefoster.com/edison-setup</a>. For the rest of this article, you&#39;ll need your device to be all configured and on the same wifi network as your host PC (the one you&#39;re using Visual Studio on) and you&#39;ll need to know the IP address and the login password.</p>
+                    <li class="all">
+                        <h5>Fire up Visual Studio</h5>
+                        <p>You can use whatever text editor you want for editing JavaScript, but I like Visual Studio Code and that's what I'll be showing here.</p>
+                        <p>You can download Code for Windows, Mac, or Linux and it's free, so no excuses there. Go to <a href="http://visualstudio.com">visualstudio.com</a></p>
+                        <img alt="Visual Studio Code" src="images/tweetmonkey/vs-code.png"/>
+                    </li>
                         
-                        <p>If you haven&#39;t already, go to <a href="visualstudio.copm">visualstudio.com</a> and download and install Visual Studio Community 2015. Then go to <a href="http://nodejstools.codeplex.com">http://nodejstools.codeplex.com</a> and download and install the Node.js Tools for Visual Studio.</p>
+                    <li class="edison">
+                        <h5>Write the Code</h5>
+                        <p>We're going to be writing JavaScript in a Node.js project on this Intel Edison to get this monkey grooving. If you are pulling an Edison out of the box and need help setting it up, have a look at <a href="codefoster.com/edison-setup">codefoster.com/edison-setup</a>. For the rest of this article, you'll need your device to be all configured and on the same wifi network as your host PC (the one you're using Visual Studio on) and you'll need to know the IP address and the login password.</p>
+                        
+                        <p>If you haven't already, go to <a href="visualstudio.copm">visualstudio.com</a> and download and install Visual Studio Community 2015. Then go to <a href="http://nodejstools.codeplex.com">http://nodejstools.codeplex.com</a> and download and install the Node.js Tools for Visual Studio.</p>
                         
                         <p>Now clone <a href="https://github.com/codefoster/tweetmonkey.git">https://github.com/codefoster/tweetmonkey.git</a> and open the <em>tweetmonkey.njsproj</em> file in Visual Studio. Let me point out a few things about this project.</p>
                         
                         <ul>
-                            <li>There&#39;s a config.js file that you need to fill in with your particulars.</li>
+                            <li>There's a config.js file that you need to fill in with your particulars.</li>
                             <li>Go to <a href="apps.twitter.com">apps.twitter.com</a> and create a new app to get the Twitter API keys and secrets.</li>
-                            <li>There&#39;s a gulpfile.js that has a deployment project. The IP address and password you enter into the config.js will determine where this project gets deployed.</li>
-                            <li>There&#39;s a <code>{ track: &#39;#cfmonkey&#39; }</code> in the app.js that you need to change the value of. This is&nbsp;what the search is going to look for.&nbsp;This is not looking for tweets <em>from a user</em> actually, but rather looking for tweets with&nbsp;certain text in the body. I will try to update the GitHub&nbsp;repo with comments for how to search for tweets to a certain user.&nbsp;</li>
-                            <li>The code in the app.js is hooking into Twitter&#39;s &quot;streaming API&quot;. This means that you don&#39;t have to poll the service every second to see if any relevant tweets have landed yet. Rather, Twitter will look for them and when one does land, it will call the your code&#39;s function. That&#39;s a thing of beauty!</li>
+                            <li>There's a gulpfile.js that has a deployment project. The IP address and password you enter into the config.js will determine where this project gets deployed.</li>
+                            <li>There's a <code>{ track: '#cfmonkey' }</code> in the app.js that you need to change the value of. This is&nbsp;what the search is going to look for.&nbsp;This is not looking for tweets <em>from a user</em> actually, but rather looking for tweets with&nbsp;certain text in the body. I will try to update the GitHub&nbsp;repo with comments for how to search for tweets to a certain user.&nbsp;</li>
+                            <li>The code in the app.js is hooking into Twitter's &quot;streaming API&quot;. This means that you don't have to poll the service every second to see if any relevant tweets have landed yet. Rather, Twitter will look for them and when one does land, it will call the your code's function. That's a thing of beauty!</li>
                         </ul>
                     </li>
 
-                    <li>
+                    <li class="edison">
                         <h5>Run the App</h5>
-                        <p>Ideally, I&#39;d have another gulp task for executing the Node.js project on the device, but I haven&#39;t quite figured that out yet, so I just SSH to the device and run it.</p>
-                        
-                        <p>I&#39;ll assume you&#39;re all set up for using SSH since you&#39;ve supposedly gone through my <a href="http://codefoster.com/edison-setup">http://codefoster.com/edison-setup</a> article already.</p>
-                        
+                        <p>Ideally, I'd have another gulp task for executing the Node.js project on the device, but I haven't quite figured that out yet, so I just SSH to the device and run it.</p>
+                        <p>I'll assume you're all set up for using SSH since you've supposedly gone through my <a href="http://codefoster.com/edison-setup">http://codefoster.com/edison-setup</a> article already.</p>
                         <p>To SSH, use...</p>
-                        
                         <p><code>ssh root@192.168.1.13</code> (or whatever your IP address happens to be)</p>
-                        
                         <p>Once on the device, cd to the project directory (it should be in the default location depicted by the ~ in the prompt - this is likely /home/root) and then use...</p>
-                        
                         <p><code>node app.js</code></p>
                     </li>
 
+                    <li class="all">
+                        <!-- Conclusion -->
+                        <p>So there you have it - a simple, end-to-end tweet monkey! Just what everyone needs.</p>
+        
+                        <p>I hope you had fun with the monkey specifically, but more importantly, I hope you're just a little bit more comfortable hooking into an existing electronic circuit and using logic from a program you wrote to manipulate it. When you get the concepts behind the procedures, you really start to see the possibilities, and <em>that </em>is the heart of the maker movement.</p>
+                        
+                        <div class="hidden">
+                            <p>I recorded a session about Tweet Monkey's older brother - <a href="http://codefoster.com/commandmonkey">Command Monkey</a> as a <a href="http://codefoster.com/codechat/023">CodeChat episode</a> with my colleague Jason Short (<a href="http://twitter.com/infinitecodex">@infinitecodex</a>). Here you go...</p>
+                            <iframe allowfullscreen="" frameborder="0" height="360" src="//channel9.msdn.com/Shows/codechat/023/player" width="640"></iframe>
+                        </div>
+                    </li>
                     
                 </ul>
                 
-                <!-- Conclusion -->
-                <p>So there you have it - a simple, end-to-end tweet monkey! Just what everyone needs.</p>
-
-                <p>I hope you had fun with the monkey specifically, but more importantly, I hope you&#39;re just a little bit more comfortable hooking into an existing electronic circuit and using logic from a program you wrote to manipulate it. When you get the concepts behind the procedures, you really start to see the possibilities, and <em>that </em>is the heart of the maker movement.</p>
-                
-                <p>I recorded a session about Tweet Monkey&#39;s older brother - <a href="http://codefoster.com/commandmonkey">Command Monkey</a> as a <a href="http://codefoster.com/codechat/023">CodeChat episode</a> with my colleague Jason Short (<a href="http://twitter.com/infinitecodex">@infinitecodex</a>). Here you go...</p>
-                <iframe allowfullscreen="" frameborder="0" height="360" src="//channel9.msdn.com/Shows/codechat/023/player" width="640"></iframe>
 
                 
                 
@@ -284,7 +364,7 @@
                 
                 
                 
-                <p><span style="line-height: 1.6em;">This is a very, very simple maker project. It&#39;s clean. It&#39;s easy. It&#39;s quick. I&#39;m hoping the process and architecture inspire you to make something of your own, and I hope the world of possibilities in this space start opening up for you as they are for me (as evidenced by my fantastically long project idea list).</span></p>
+                <p><span style="line-height: 1.6em;">This is a very, very simple maker project. It's clean. It's easy. It's quick. I'm hoping the process and architecture inspire you to make something of your own, and I hope the world of possibilities in this space start opening up for you as they are for me (as evidenced by my fantastically long project idea list).</span></p>
 
 
                 
@@ -315,7 +395,7 @@
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script>
     (function(){
-        processConditionals('edison');
+        processConditionals('raspi');
     })();
     
     function processConditionals(value){
@@ -323,7 +403,8 @@
         $('.' + value + ', .all').show();
     }
 </script>
-
+<SCRIPT charset="utf-8" type="text/javascript" src="http://ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&MarketPlace=US&ID=V20070822%2FUS%2Fcodefosterc00-20%2F8005%2F64ae37b0-c5cb-4711-91be-b6ebdf152c46"> </SCRIPT>
+<NOSCRIPT><A HREF="http://ws-na.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&MarketPlace=US&ID=V20070822%2FUS%2Fcodefosterc00-20%2F8005%2F64ae37b0-c5cb-4711-91be-b6ebdf152c46&Operation=NoScript">Amazon.com Widgets</A></NOSCRIPT>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/tm-scripts.js"></script>
 
