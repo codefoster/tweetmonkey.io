@@ -272,9 +272,11 @@
                         <p>Ironically, though, the boards we're dealing with - these amazing works of engineering - are only 2-3 times the price of this silly mechanical monkey! The inner workings of computers are child's play compared to the inner workings of our global economy. But I digress. My point was that you don't want to toast your board.</p>
                         <p>So we want to control the monkey by simply doing the equivalent of turning the switch on an off.</p>
                         <p>What we discover in this monkey's underside is that the switch on the outside of the trapdoor is simply connecting or disconnecting the ends of the batteries and completing or breaking the circuit. So let's do the same. Let's simply tap into the two contacts with some wires, run them out, and use software to virtually touch the ends of the wire together.</p>
+                        <p>There are two ways to accomplish this. If you don't mind a little drilling and soldering, you can run wires through the battery door and solder them to the metal contacts. This is a good solution if you're comfortable with it. If you'd rather avoid the extra work, read on.</p>
                         <p>We need to run wires outside all clean like, so let's drill some very small holes through the trap door and run wires through. Then we'll set up a soldering station and solder the wires directly to the contacts.</p>
                         <p><img alt="" src="images/tweetmonkey/holes.png" /></p>
                         <p>Now we can close the door and we've got two wires that when touched together complete the circuit and set the monkey in motion. Conveniently, we have not disabled our on/off switch, so if we wish to use it to turn the monkey on, we can still do that.</p>
+                        <p>To avoid drilling and soldering, simply use a little bit of electrical tape to attach wires to the ends of the batteries. The black wire to the battery that's showing its negative end, and the red wire to the battery that's showing its positive end. Then carefully close the wires in the door (it will fit though very snugly) and lock it.</p>
                         <p>And just like that, we're done with surgery. Your monkey should recover nicely.</p>
                     </li>
 
@@ -284,12 +286,12 @@
                         <a href="images/tweetmonkey/breadboard-diagram.png"><img alt="Breadboard Diagram" src="images/tweetmonkey/breadboard-diagram-700.png" /></a>
                         <p>You can click that image to make it bigger.</p>
                         <p>This is a very basic circuit. It involves a MOSFET, an LED, and three resistors. I think I've figured out the optimal breadboard layout - one that requires the fewest jumpers and makes the most sense visually.</p>
-                        <p>Your resistor values are important, so be sure to match the colored stripes. The direction you insert the resistors (we call that the polarity) is not important. The direction of the MOSFET and the LED, on the other hand, <i>are</i> important. The MOSFET should have the tab in the back and the writing in the front. The LED should have a long leg and a short one. The long one is what we call the anode. That always goes on the positive side. In this circuit layout it's on the right.</p>
+                        <p>Your resistor values are important, so be sure to match the colored stripes. The direction you insert the resistors (we call that the polarity) is not important. The direction of the MOSFET and the LED, on the other hand, <i>are</i> important. The MOSFET should have the tab in the back and the lettering in the front. The LED should have a long leg and a short one. The long one is what we call the anode. That always goes on the positive side. In this circuit layout it's on the right.</p>
                     </li>
 
                     <li class="raspi">
                         <h5>Install Raspbian</h5>
-                        <p>In this guide, we'll be using Raspbian. Raspbian is Linux. It's a Raspberry Pi specific version of Linux that's based on Debian. This is just one operating system that you can put on Raspberry Pi. In the future, I'll include a guide for installing Windows 10 IoT Core on your device as well.
+                        <p>In this guide, we'll be using Raspbian. Raspbian is a version (a "distribution" actually) of Linux. It's a Raspberry Pi specific version of Linux that's based on Debian. This is just one operating system that you can put on Raspberry Pi. In the future, I'll include a guide for installing Windows 10 IoT Core on your device as well.
                         <p>Download the Raspbian image from <a href="https://www.raspberrypi.org/downloads/raspbian/">the download page</a> on raspberrypi.org. I recommend you get the latest version of the OS.</p>
                         <p>Next follow <a href="https://www.raspberrypi.org/documentation/installation/installing-images/README.md"> their guide</a> for flashing that image to your SD card.</p>
                     </li>
