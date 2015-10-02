@@ -289,21 +289,46 @@
                         <p>Your resistor values are important, so be sure to match the colored stripes. The direction you insert the resistors (we call that the polarity) is not important. The direction of the MOSFET and the LED, on the other hand, <i>are</i> important. The MOSFET should have the tab in the back and the lettering in the front. The LED should have a long leg and a short one. The long one is what we call the anode. That always goes on the positive side. In this circuit layout it's on the right.</p>
                     </li>
 
+                    <li class="edison">
+                        <h5>Flash Your Edison</h5>
+                        <p>(coming soon)</p>
+                    </li>
+
                     <li class="raspi">
-                        <h5>Install Raspbian</h5>
-                        <p>In this guide, we'll be using Raspbian. Raspbian is a version (a "distribution" actually) of Linux. It's a Raspberry Pi specific version of Linux that's based on Debian. This is just one operating system that you can put on Raspberry Pi. In the future, I'll include a guide for installing Windows 10 IoT Core on your device as well.
-                        <p>Download the Raspbian image from <a href="https://www.raspberrypi.org/downloads/raspbian/">the download page</a> on raspberrypi.org. I recommend you get the latest version of the OS.</p>
-                        <p>Next follow <a href="https://www.raspberrypi.org/documentation/installation/installing-images/README.md"> their guide</a> for flashing that image to your SD card.</p>
+                        <h5>Install and Configure Raspbian on Your Pi</h5>
+                        <p>In this guide, we'll be using Raspbian. Raspbian is a version (a "distribution" actually) of Linux. It's a Raspberry Pi specific version of Linux that's based on Debian. This is just one operating system that you can put on Raspberry Pi. In the future, I'll include a guide for installing Windows 10 IoT Core on your device as well.</p>
+                        <p>This part pretty much requires that you have an HDMI monitor plugged in to your Pi with at least a keyboard - if not a mouse. If you don't have those, then you'll need to plug your Pi in to an ethernet cable and remote to it using it's mDNS name (which by default is raspberrypi.local).</p>
+                        <p>Go to <a href="https://www.raspberrypi.org/downloads/raspbian/">raspberrypi.org/downloads/raspbian</a> and download the zip file for the latest version of Raspbian (currently Jessie as of this writing).</p>
+                        <p>Put your microSD card into an adapter and then into your computer.</p>
+                        <p>Follow the installation guide <a href="https://www.raspberrypi.org/documentation/installation/installing-images/README.md">here</a> to get the image flashed to your SD card.</p>
+                        <p>When the flash is finished, eject the card from your computer and insert it into the microSD card slot on your Raspberry Pi (while the power is off) and then power the Pi on.</p>
+                        <p>You should be booted into X - the graphical user interface for Raspbian.</p>
+                        <p>Go to Start | Accessories | Terminal and type <code>sudo raspi-config</code> and hit enter.</p>
+                        <p>In the Raspbian config interface select Boot Options and configure your device to boot to the command line and prompt for a user login</p>
+                        <p>Now reboot your device by typing <code>reboot</code> at the terminal.</p>
+                        <p>Now you'll boot to the command line and be prompted to log in</p>
+                        <p>Enter <code>pi</code> for the login and <code>raspberry</code> for the password.</p>
+                        <p>Set the password for the root user to something you'll remember using <code>sudo passwd root</code> and then entering your password.</p>
+                        <p>Now sign in as the root user by typing <code>su root</code>.
+                        <p>Now go back to <code>raspi-config</code> (you don't need <code>sudo raspi-config</code> now because you're logged in as the root user).
+                        <p style="color:goldenrod;">{ change config options }</p>
+                        <p>Now we need to set up your wifi adapter and connect to your wireless network.</p>
+                        <p>Type <code>nano /etc/wpa_supplicant/wpa_supplicant.conf</code> and add the following to the end of the file...</p>
+                            <code>
+                                network={<br/>
+                                &nbsp;&nbsp;ssid=""<br/>
+                                &nbsp;&nbsp;password=""<br/>
+                                }
+                            </code>
+                        <p>Of course, you need to enter your actual WiFi SSID and password into there.</p>
+                        <p>One last thing. You need to configure Raspbian to allow the root user to SSH to the device. You do this by typing <code>nano /etc/ssh/sshd_config</code>, locating the line that says <code>PermitRootLogin without-password</code> and adding a <code>#</code> before it to comment it out.</p>
+                         
                     </li>
 
                     <li class="raspi">
                         <h5>Install Node</h5>
                         <p>I followed <a href="https://gist.github.com/stolsma/3301813">these instructions</a> for installing Node.js, but I believe there's an easier way and I'm going to update this soon.</p>
                         <p>You can see all of the available versions of Node.js at <a href="http://nodejs.org/dist">nodejs.org/dist</a> and notice if you click on <a href="http://nodejs.org/dist/v0.10.26/">version 0.10.26</a> that you see a tarball specifically for the Pi. That's because normally the V8 engine that is behind Node.js isn't compatible with ARM processors. There are certain versions of Node.js that have a compatible build, however. And if I'm not mistaken, the latest versions of Node.js (based on the io.js codebase) are ARM compatible. I need to test that out.</p>  
-                    </li>
-                    <li class="edison">
-                        <h5>Flash Your Edison</h5>
-                        <p>(coming soon)</p>
                     </li>
 
                     <li class="all">
