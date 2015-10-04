@@ -302,6 +302,7 @@
                         <p><img alt="" src="images/tweetmonkey/holes.png" /></p>
                         <p>Now we can close the door and we've got two wires that when touched together complete the circuit and set the monkey in motion. Conveniently, we have not disabled our on/off switch, so if we wish to use it to turn the monkey on, we can still do that.</p>
                         <p>To avoid drilling and soldering, simply use a little bit of electrical tape to attach wires to the ends of the batteries. The black wire to the battery that's showing its negative end, and the red wire to the battery that's showing its positive end. Then carefully close the wires in the door (it will fit though very snugly) and lock it.</p>
+                        <p><img height="500" width="500" alt="" src="images/electrictape.jpg" /></p>
                         <p>And just like that, we're done with surgery. Your monkey should recover nicely.</p>
                     </li>
 
@@ -310,7 +311,7 @@
                         <p>The complete diagram or Tweet Monkey is as follows...</p>
                         <a href="images/tweetmonkey/breadboard-diagram.png"><img alt="Breadboard Diagram" src="images/tweetmonkey/breadboard-diagram-700.png" /></a>
                         <p>You can click that image to make it bigger.</p>
-                        <p>This is a very basic circuit. It involves a MOSFET, an LED, and three resistors. I think I've figured out the optimal breadboard layout - one that requires the fewest jumpers and makes the most sense visually.</p>
+                        <p>This is a very basic circuit. It involves a <a href="http://www.electronics-tutorials.ws/transistor/tran_6.html">MOSFET</a>, an <a href="https://en.wikipedia.org/wiki/Light-emitting_diode">LED</a>, and three <a href="https://learn.sparkfun.com/tutorials/resistors">resistors</a>. I think I've figured out the optimal breadboard layout - one that requires the fewest jumpers and makes the most sense visually.</p>
                         <p>Your resistor values are important, so be sure to match the colored stripes. The direction you insert the resistors (we call that the polarity) is not important. The direction of the MOSFET and the LED, on the other hand, <i>are</i> important. The MOSFET should have the tab in the back and the lettering in the front. The LED should have a long leg and a short one. The long one is what we call the anode. That always goes on the positive side. In this circuit layout it's on the right.</p>
                     </li>
 
@@ -384,7 +385,12 @@
                         <p>You can use whatever text editor you want for editing JavaScript, but I like Visual Studio Code and that's what I'll be showing here.</p>
                         <p>You can download Code for Windows, Mac, or Linux and it's free, so no excuses there. Go to <a href="http://visualstudio.com">visualstudio.com</a></p>
                         <img alt="Visual Studio Code" src="images/tweetmonkey/vs-code.png"/>
-                        <p>To open your code in Visual Studio Code, you simply change to the tweetmonkey-raspi directory that was created when you cloned the project and type 'code .'. That opens the current directory in Code. 
+                        <p>To open your code in Visual Studio Code, you simply change to the tweetmonkey-raspi directory that was created when you cloned the project and type 'code .'. That opens the current directory in Code. </p>
+                        <p>Now we need to transfer the code onto the raspberry pi. We need to use scp to transfer the files on to the pi. Be sure you are in the tweetmonkey-raspi folder. </p>
+                        <p>To SCP, use... </p>
+                        <p><code> scp  index.js config.js package.json root@192.168.1.13 (or whatever your IP address happens to be)</code>   
+                        
+                     
                     </li>
 
                     <li class="edison">
@@ -404,9 +410,13 @@
                         </ul>
                     </li>
 
-                    <li class="edison">
+                    <li class="raspi">
                         <h5>Deploy and Run the App</h5>
-                        <p>(coming soon)</p>
+                        <p>So next we are going SSH to the device and run it.</p>
+                        <p>To SSH, use...</p>
+                        <p><code>ssh root@192.168.1.13</code> (or whatever your IP address happens to be)</p>
+                        <p>Once on the device, cd to the project directory (it should be in the default location depicted by the ~ in the prompt - this is likely /home/root) and then use...</p>
+                        <p><code>node app.js</code></p>
                     </li>
                     
                     <li class="edison">
